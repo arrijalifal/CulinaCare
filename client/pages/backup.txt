@@ -1,0 +1,1 @@
+<main className="h-screen w-screen bg-[#ECECEC] flex flex-col">

@@ -35,7 +35,8 @@ export default function FoodFundList({userData}) {
 }
 
 export async function getServerSideProps() {
-  const getUserData = await axios.get('https://78f1-202-67-40-226.ngrok-free.app');
+  // const getUserData = await axios.get('https://78f1-202-67-40-226.ngrok-free.app');
+  const getUserData = await axios.get('http://localhost:3000/data');
   const userData = getUserData.data;
   return {
     props: { userData }
