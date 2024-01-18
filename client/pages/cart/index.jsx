@@ -1,17 +1,10 @@
-import Header from "@/components/Header";
+import PaymentComponent from "@/components/PaymentComponent";
+import CartMultiplier from "@/components/CartMultiplier";
 
 export default function CartPage() {
-    return <>
-        <Header href={'/'} title="Cart"/>
-        <section className="flex-1"></section>
-        <section>
-            <div>
-                <p>Total</p>
-                <p>Rp 123.456</p>
-            </div>
-            <div>
-                
-            </div>
-        </section>
-    </>
+    return <PaymentComponent title={'Cart'} buttontext={'Continue to Payment'} buttonlink={'/checkout'}>
+        <CartMultiplier />
+        <CartMultiplier />
+        <CartMultiplier />
+   </PaymentComponent>
 }
