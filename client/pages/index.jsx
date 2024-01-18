@@ -1,7 +1,14 @@
 import { HiOutlineUser } from "react-icons/hi";
+import { CgSearch } from "react-icons/cg";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
+    const [navbar, setNavBar] = useState([
+        true, false, false, false
+    ])
     const categories = ["Chicken", "Beef", "Veggies", "Drinks"];
     const todays_deal = [
         {
@@ -26,6 +33,7 @@ export default function Home() {
                 <h1 className="text-2xl p-2 relative top">“Nourishing the World one step at a time”</h1>
             </div>
             <div className="bg-[#ECE6F0] w-11/12 h-10 px-3 rounded-2xl relative top-4 border border-slate-400 flex items-center">
+                <CgSearch className="mr-4"/>
                 <p>Search Food</p>
             </div>
         </section>
@@ -65,18 +73,20 @@ export default function Home() {
                 <div className="flex justify-between">
                     {
                         todays_deal.map((deal, idx) => {
-                            return <div className="flex flex-col items-center">
-                                <Image src={`/images/todays_deal/${idx}.png`} width={77} height={63}/>
-                                <h3>{deal.nama}</h3>
-                                <h4>{deal.harga}</h4>
-                            </div>
+                            return <Link href={`/details/${idx}`}>
+                                <div className="flex flex-col items-center">
+                                    <Image src={`/images/todays_deal/${idx}.png`} width={77} height={63} />
+                                    <h3>{deal.nama}</h3>
+                                    <h4>{deal.harga}</h4>
+                                </div>
+                            </Link>
                         })
                     }
                 </div>
             </div>
         </section>
-        <section className="border-t-2 border-x-2 border-[#020202]/10 rounded-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </section>
+        <section className="border-t-2 border-x-2 border-[#020202]/10 rounded-md flex py-2">
+            <NavBar />
+        </section>        
     </>
 }
