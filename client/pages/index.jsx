@@ -33,7 +33,7 @@ export default function Home() {
                 <h1 className="text-2xl p-2 relative top">“Nourishing the World one step at a time”</h1>
             </div>
             <div className="bg-[#ECE6F0] w-11/12 h-10 px-3 rounded-2xl relative top-4 border border-slate-400 flex items-center">
-                <CgSearch className="mr-4"/>
+                <CgSearch className="mr-4" />
                 <p>Search Food</p>
             </div>
         </section>
@@ -85,8 +85,6 @@ export default function Home() {
                 </div>
             </div>
         </section>
-        <section className="border-t-2 border-x-2 border-[#020202]/10 rounded-md flex py-2">
-            <NavBar />
-        </section>        
+        <NavBar />
     </>
 }
